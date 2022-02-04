@@ -1,4 +1,5 @@
 const cards = document.querySelectorAll<HTMLElement>(".card");
+
 let firstCard: HTMLElement, secondCard: HTMLElement;
 let hasAsigned = false;
 let closeBoard = false;
@@ -20,11 +21,15 @@ const handleTarget = (e: Event) => {
 };
 
 function asignCards(target: HTMLElement) {
+  
+  // First Card   
   if (!hasAsigned) {
     firstCard = target;
     hasAsigned = true;
     firstCard.classList.remove("card");
-  } else {
+  }
+  // Second Card 
+  else {
     closeBoard = true;
     secondCard = target;
     firstCard.classList.add("card");
@@ -42,7 +47,8 @@ function isMatch(firstCard: HTMLElement, secondCard: HTMLElement) {
       closeBoard = false;
       clearInterval(removeCard);
     }, 500);
-  } else {
+  }
+  else {
     console.log(firstCard.dataset.name, secondCard.dataset.name);
     const removeFlip = setInterval(() => {
       firstCard.classList.remove("flip");
