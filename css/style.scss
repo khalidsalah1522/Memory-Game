@@ -1,0 +1,87 @@
+html {
+  font-size: 10px;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0%;
+  margin: 0%;
+}
+
+body {
+  height: 100vh;
+  background: rgb(37, 59, 144);
+}
+
+.flex-r-c {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  height: 100%;
+
+  .app {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0.5rem;
+    width: 600px;
+    height: 600px;
+
+    & > div {
+      position: relative;
+      width: calc((93% / 4));
+      height: calc((93% / 3));
+      margin: 0.5rem;
+      border-radius: 8px;
+      transition: transform 1s ease-in-out;
+      background-color: rgb(14, 28, 54);
+      transform-style: preserve-3d;
+
+      div {
+        position: absolute;
+        width: 80%;
+        height: 70%;
+      }
+
+      .main-face {
+        transform: rotateY(180deg);
+        backface-visibility: hidden;
+      }
+
+      .flip-face {
+        background: url(../img/js-badge.svg) no-repeat;
+        backface-visibility: hidden;
+      }
+    }
+
+    .flip {
+      transform: rotateY(-180deg);
+    }
+
+    .angluer .main-face {
+      background: url(../img/angular.svg) no-repeat;
+    }
+
+    .react .main-face {
+      background: url(../img/react.svg) no-repeat;
+    }
+
+    .aurelia .main-face {
+      background: url(../img/aurelia.svg) no-repeat;
+    }
+
+    .ember .main-face {
+      background: url(../img/ember.svg) no-repeat;
+    }
+
+    .backbone .main-face {
+      background: url(../img/backbone.svg) no-repeat;
+    }
+
+    .vue .main-face {
+      background: url(../img/vue.svg) no-repeat;
+    }
+  }
+}
